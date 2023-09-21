@@ -16,7 +16,7 @@ jobs:
 
       - name: Install arcaflow-docsgen
         run: |
-          wget https://github.com/arcalot/arcaflow-docsgen/releases/download/v0.1.0/arcaflow-docsgen_0.1.0_linux_amd64.tar.gz \
+          wget https://github.com/arcalot/arcaflow-docsgen/releases/download/v0.1.1/arcaflow-docsgen_0.1.1_linux_amd64.tar.gz \
           && tar -C /usr/local/bin -xzf arcaflow-docsgen_0.1.0_linux_amd64.tar.gz
 
       - name: Setup Python
