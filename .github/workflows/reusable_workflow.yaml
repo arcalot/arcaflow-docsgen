@@ -14,10 +14,14 @@ jobs:
       - name: Checkout this project
         uses: actions/checkout@v4
 
+      - name: Set version
+        env:
+          DOCSGEN_VER: "0.1.1"
+
       - name: Install arcaflow-docsgen
         run: |
-          wget https://github.com/arcalot/arcaflow-docsgen/releases/download/v0.1.1/arcaflow-docsgen_0.1.1_linux_amd64.tar.gz \
-          && tar -C /usr/local/bin -xzf arcaflow-docsgen_0.1.0_linux_amd64.tar.gz
+          wget https://github.com/arcalot/arcaflow-docsgen/releases/download/v${{env.DOCSGEN_VER}}/arcaflow-docsgen_${{env.DOCSGEN_VER}}_linux_amd64.tar.gz \
+          && tar -C /usr/local/bin -xzf arcaflow-docsgen_${{env.DOCSGEN_VER}}_linux_amd64.tar.gz
 
       - name: Setup Python
         uses: actions/setup-python@v4
