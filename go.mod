@@ -3,7 +3,7 @@ module go.flow.arcalot.io/docsgen
 go 1.19
 
 require (
-	go.flow.arcalot.io/pluginsdk v0.4.1
+	go.flow.arcalot.io/pluginsdk v0.5.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
