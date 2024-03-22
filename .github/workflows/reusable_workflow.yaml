@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this project
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@v4
 
       - name: Install arcaflow-docsgen
         env:
@@ -22,7 +22,7 @@ jobs:
           && tar -C /usr/local/bin -xzf arcaflow-docsgen_${{env.DOCSGEN_VER}}_linux_amd64.tar.gz
 
       - name: Setup Python
-        uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5
+        uses: actions/setup-python@v5
         with:
           python-version: 3.9.16
 
@@ -35,7 +35,7 @@ jobs:
           python -m poetry config virtualenvs.in-project true
 
       - name: Cache the virtualenv
-        uses: actions/cache@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4
+        uses: actions/cache@v4
         with:
           path: ./.venv
           key: ${{ runner.os }}-venv-${{ hashFiles('**/poetry.lock') }}
