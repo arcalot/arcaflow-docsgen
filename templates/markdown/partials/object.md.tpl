@@ -2,7 +2,7 @@
 <tr><th>Properties</th><td>
     {{- range $propertyID, $property := .Properties -}}
         <details><summary>{{ $propertyID }} ({{- partial "typename" $property.Type -}})</summary>
-        <table><tbody>
+        <table style="width:100%"><tbody>
             {{- partial "property" $property -}}
             {{- partial "type" $property.Type -}}
         </tbody></table>
