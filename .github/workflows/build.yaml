@@ -16,6 +16,10 @@ jobs:
     name: build
     permissions:
       contents: write
+    secrets:
+      QUAY_NAMESPACE: ${{ secrets.QUAY_NAMESPACE }}
+      QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
+      QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
     needs:
       - lint_and_test
     uses: arcalot/arcaflow-reusable-workflows/.github/workflows/go_release.yaml@main
