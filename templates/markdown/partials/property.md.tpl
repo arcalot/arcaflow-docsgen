@@ -7,7 +7,7 @@
     {{- end -}}
 {{- end -}}
 <tr><th>Required:</th><td>{{- if .Required }}Yes{{ else }}No{{ end }}</td></tr>
-{{- with .Default }}<tr><th>Default (JSON encoded):</th><td><pre><code>{{ . }}</code></pre></td></tr>{{ end -}}
+{{- with .Default }}<tr><th>Default (JSON encoded):</th><td><pre><code style="white-space: nowrap">{{ . }}</code></pre></td></tr>{{ end -}}
 {{- with .RequiredIf }}<tr><th>Required if the following fields are set:</th><td>
 {{- $first := true -}}
 {{- range . -}}
@@ -33,5 +33,5 @@
     {{ . -}}
 {{- end }}</td></tr>{{ end -}}
 {{- with .Examples }}<tr><th>Examples (JSON encoded):</th><td>
-{{ range . }}<pre><code>{{ . }}</code></pre>{{ end }}
+{{ range . }}<pre><code style="white-space: nowrap">{{ . }}</code></pre>{{ end }}
 </td></tr>{{ end -}}

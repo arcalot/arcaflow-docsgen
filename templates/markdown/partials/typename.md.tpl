@@ -1,4 +1,4 @@
-<code>{{- if eq .TypeID "enum_string" -}}
+<code style="white-space: nowrap">{{- if eq .TypeID "enum_string" -}}
     enum[string]
 {{- else if eq .TypeID "enum_integer" -}}
     enum[int]
