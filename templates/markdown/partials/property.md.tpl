@@ -3,7 +3,7 @@
         <tr width=600><th>Name:</th><td>{{ . }}</td></tr>
     {{- end -}}
     {{- with .Description -}}
-        <tr width=600><th>Description:</th><td>{{ . }}</td></tr>
+        <tr><th>Description:</th><td width="500">{{ . }}</td></tr>
     {{- end -}}
 {{- end -}}
 <tr width=600><th>Required:</th><td>{{- if .Required }}Yes{{ else }}No{{ end }}</td></tr>
