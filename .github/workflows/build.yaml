@@ -16,12 +16,13 @@ jobs:
     name: build
     permissions:
       contents: write
-    secrets:
-      QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
-      QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
     needs:
       - lint_and_test
     uses: arcalot/arcaflow-reusable-workflows/.github/workflows/go_release.yaml@main
+    secrets:
+      REGISTRY_USERNAME: ${{ secrets.QUAY_USERNAME }}
+      REGISTRY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
     with:
       go_version: ${{ vars.ARCALOT_GO_VERSION }}
       for_release: ${{ startsWith(github.event.ref, 'refs/tags/') }}
+      registry: quay.io
