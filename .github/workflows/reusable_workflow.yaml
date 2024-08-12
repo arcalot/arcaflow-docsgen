@@ -16,7 +16,7 @@ jobs:
 
       - name: Install arcaflow-docsgen
         env:
-          DOCSGEN_VER: "0.3.2"
+          DOCSGEN_VER: "0.3.3"
         run: |
           wget https://github.com/arcalot/arcaflow-docsgen/releases/download/v${{env.DOCSGEN_VER}}/arcaflow-docsgen_${{env.DOCSGEN_VER}}_linux_amd64.tar.gz \
           && tar -C /usr/local/bin -xzf arcaflow-docsgen_${{env.DOCSGEN_VER}}_linux_amd64.tar.gz
