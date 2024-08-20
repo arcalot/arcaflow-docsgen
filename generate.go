@@ -65,6 +65,7 @@ func Generate(markdownFile []byte, pluginSchema schema.Schema[schema.Step]) ([]b
 				return &r
 			default:
 				panic(fmt.Errorf("invalid input type for 'prefix': %T (%v)", input, input))
+				return nil // Appease the silly linter
 			}
 		},
 		"partial": func(partial string, data any) template.HTML {
