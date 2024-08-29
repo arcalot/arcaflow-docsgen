@@ -1,11 +1,9 @@
 module go.flow.arcalot.io/docsgen
 
-go 1.21
-
-toolchain go1.21.11
+go 1.22.0
 
 require (
-	go.flow.arcalot.io/pluginsdk v0.12.5
+	go.flow.arcalot.io/pluginsdk v0.13.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
