@@ -64,7 +64,7 @@ jobs:
           echo "README_DIFF=$(cat arcaflow-docsgen.diff | wc -l)" >> $GITHUB_ENV
       
       - name: Update README.md if necessary
-        if: env.README_DIFF != 0
+        if: env.README_DIFF != 0 && !github.ref_protected
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_EMAIL: arcalot@redhat.com
