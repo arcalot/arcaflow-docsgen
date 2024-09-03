@@ -27,4 +27,4 @@
     {{- partial "one_of_int" .  -}}
 {{- else if eq .TypeID "ref" -}}
     {{- partial "ref" .  -}}
-{{- end -}}
+{{- end -}}</tr>
