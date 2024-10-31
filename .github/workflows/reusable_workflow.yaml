@@ -60,16 +60,20 @@ jobs:
         run: |
           echo "README_DIFF=$(cmp -s README.md README_TMP.md ; echo $?)" >> $GITHUB_ENV
       
-      - name: Update README.md if necessary
-        if: env.README_DIFF != 0 && !github.ref_protected
+      - name: Update README.md if appropriate
+        # The github.head_ref variable is only available for pull requests,
+        # however, we probably shouldn't be updating the branch for anything
+        # which isn't a PR, anyway!
+        if: env.README_DIFF == 1 && github.event_name == 'pull_request'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_EMAIL: arcalot@redhat.com
           GH_USERNAME: arcabot
         run: |
-          mv README_TMP.md README.md
           git config --global user.name $GH_USERNAME
           git config --global user.email $GH_EMAIL
-          git add README.md
-          git commit -m 'Automatic update of README.md by arcaflow-docsgen arcabot'
+          git switch ${{ github.head_ref }}
+          mv README_TMP.md README.md
+          git commit -m 'Automatic update of README.md by arcaflow-docsgen arcabot' README.md
           git push
+          git switch ${{ github.ref }}
