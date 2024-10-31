@@ -58,10 +58,7 @@ jobs:
 
       - name: Determine diff
         run: |
-          set +e
-          diff README.md README_TMP.md > arcaflow-docsgen.diff
-          set -e
-          echo "README_DIFF=$(cat arcaflow-docsgen.diff | wc -l)" >> $GITHUB_ENV
+          echo "README_DIFF=$(cmp -s README.md README_TMP.md ; echo $?)" >> $GITHUB_ENV
       
       - name: Update README.md if necessary
         if: env.README_DIFF != 0 && !github.ref_protected
