@@ -5,7 +5,7 @@ go 1.23.0
 toolchain go1.23.4
 
 require (
-	go.flow.arcalot.io/pluginsdk v0.14.1
+	go.flow.arcalot.io/pluginsdk v0.14.2
 	gopkg.in/yaml.v3 v3.0.1
 )
 
